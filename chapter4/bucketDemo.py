@@ -4,6 +4,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession \
     .builder \
     .appName("Python Spark SQL 저장하기") \
+    .config("spark.jars", "/home/sangwon/.local/lib/python3.10/site-packages/pyspark/jars/redshift-jdbc42-2.1.0.14.jar") \
     .config("spark.sql.autoBroadcastJoinThreshold", -1) \
     .config("spark.sql.adaptive.enabled", False) \
     .enableHiveSupport() \
